@@ -24,7 +24,7 @@ def showFit(timebase, yValues, modelFun, params):
     plt.close()
     plt.plot(timebase, yValues, 'bo')
     t = np.linspace(timebase[0], timebase[-1])
-    fitted = np.array(map(lambda x: modelFun(x, *params), t))
+    fitted = np.array(list(map(lambda x: modelFun(x, *params), t)))
     plt.plot(t, fitted, 'k')
     plt.title("Close the figure to continue")
     plt.show()
